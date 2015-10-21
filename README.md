@@ -7,7 +7,12 @@ A simple example of running a LinkRest app on [Dropwizard](http://www.dropwizard
 
 Here is how to run it:
 
-TODO:
+	git clone https://github.com/andrus/link-rest-dropwizard.git
+	cd link-rest-dropwizard
+	mvn clean package
+	java -jar target/link-rest-dropwizard-1.0-SNAPSHOT.jar server
+
+That's it, no need for installing Tompcat, doing deployment, etc. That's the beauty of DropWizard. LinkRest bootstrap part happens in the [DWApplication class](https://github.com/andrus/link-rest-dropwizard/blob/master/src/main/java/org/objectstyle/linkrest/cms/DWApplication.java).
 
 Resources:
 
