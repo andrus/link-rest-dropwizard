@@ -1,6 +1,6 @@
 # link-rest-dropwizard
 
-A simple example of running a LinkRest app on [Dropwizard](http://www.dropwizard.io).
+A simple example of running a [LinkRest](http://nhl.github.io/link-rest/) app on [Dropwizard](http://www.dropwizard.io).
 
 * Requires Java 1.8 or newer
 * Requires Maven
