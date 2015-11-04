@@ -21,11 +21,11 @@
 
 		<link-rest-version>1.20</link-rest-version>
 		<cayenne-version>4.0.M2</cayenne-version>
-		<dropwizard.version>0.8.4</dropwizard.version>
+		<dropwizard.version>0.9.1</dropwizard.version>
 
 		<!-- Aligning with Dropwizard versions of dependencies -->
-		<slf4j-version>1.7.10</slf4j-version>
-		<jackson-version>2.5.1</jackson-version>
+		<slf4j-version>1.7.12</slf4j-version>
+		<jackson-version>2.6.3</jackson-version>
 	</properties>
 
 	<scm>
