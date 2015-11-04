@@ -162,17 +162,7 @@
 					<artifactId>maven-source-plugin</artifactId>
 					<version>2.4</version>
 				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-war-plugin</artifactId>
-					<version>2.6</version>
-					<configuration>
-						<failOnMissingWebXml>false</failOnMissingWebXml>
-						<warName>link-rest-cms-demo</warName>
-					</configuration>
-				</plugin>
-
+				
 				<plugin>
 					<groupId>org.apache.cayenne.plugins</groupId>
 					<artifactId>maven-cayenne-plugin</artifactId>
