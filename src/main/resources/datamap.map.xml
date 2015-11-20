@@ -17,6 +17,11 @@
 		<db-attribute name="name" type="VARCHAR" isMandatory="true" length="100"/>
 		<db-attribute name="vhost" type="VARCHAR" isMandatory="true" length="100"/>
 	</db-entity>
+	<db-entity name="tag">
+		<db-attribute name="article_id" type="BIGINT" isMandatory="true"/>
+		<db-attribute name="id" type="BIGINT" isPrimaryKey="true" isMandatory="true"/>
+		<db-attribute name="name" type="VARCHAR" length="200"/>
+	</db-entity>
 	<obj-entity name="Article" className="org.objectstyle.linkrest.cms.cayenne.Article" dbEntityName="article">
 		<obj-attribute name="body" type="java.lang.String" db-attribute-path="body"/>
 		<obj-attribute name="publishedOn" type="java.util.Date" db-attribute-path="published_on"/>
@@ -27,12 +32,23 @@
 		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
 		<obj-attribute name="vhost" type="java.lang.String" db-attribute-path="vhost"/>
 	</obj-entity>
+	<obj-entity name="Tag" className="org.objectstyle.linkrest.cms.cayenne.Tag" dbEntityName="tag">
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+	</obj-entity>
 	<db-relationship name="domain" source="article" target="domain" toMany="false">
 		<db-attribute-pair source="domain_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="tags" source="article" target="tag" toMany="true">
+		<db-attribute-pair source="id" target="article_id"/>
 	</db-relationship>
 	<db-relationship name="articles" source="domain" target="article" toMany="true">
 		<db-attribute-pair source="id" target="domain_id"/>
 	</db-relationship>
+	<db-relationship name="article" source="tag" target="article" toMany="false">
+		<db-attribute-pair source="article_id" target="id"/>
+	</db-relationship>
 	<obj-relationship name="domain" source="Article" target="Domain" deleteRule="Nullify" db-relationship-path="domain"/>
+	<obj-relationship name="tags" source="Article" target="Tag" deleteRule="Deny" db-relationship-path="tags"/>
 	<obj-relationship name="articles" source="Domain" target="Article" deleteRule="Deny" db-relationship-path="articles"/>
+	<obj-relationship name="article" source="Tag" target="Article" deleteRule="Nullify" db-relationship-path="article"/>
 </data-map>

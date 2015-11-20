@@ -63,4 +63,9 @@ public class ArticleSubResource {
 		return LinkRest.delete(Article.class, config).toManyParent(Domain.class, domainId, Domain.ARTICLES).id(id)
 				.delete();
 	}
+
+	@Path("{articleId}/tags")
+	public TagSubResource subscriptions(@PathParam("articleId") int articleId) {
+		return new TagSubResource(config, articleId);
+	}
 }
