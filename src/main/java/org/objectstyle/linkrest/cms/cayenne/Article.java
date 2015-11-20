@@ -1,5 +1,7 @@
 package org.objectstyle.linkrest.cms.cayenne;
 
+import java.util.Date;
+
 import org.objectstyle.linkrest.cms.cayenne.auto._Article;
 
 public class Article extends _Article {
@@ -8,7 +10,7 @@ public class Article extends _Article {
 
     @Override
     protected void onPostAdd() {
-        //TODO: implement onPostAdd
+		setPublishedOn(new Date());
     }
 
 }
