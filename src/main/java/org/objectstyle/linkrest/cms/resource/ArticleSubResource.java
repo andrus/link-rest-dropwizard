@@ -65,7 +65,7 @@ public class ArticleSubResource {
 	}
 
 	@Path("{articleId}/tags")
-	public TagSubResource subscriptions(@PathParam("articleId") int articleId) {
+	public TagSubResource articles(@PathParam("articleId") int articleId) {
 		return new TagSubResource(config, articleId);
 	}
 }
