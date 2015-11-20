@@ -59,7 +59,7 @@ public class DomainResource {
 	 * the context of a single web domain.
 	 */
 	@Path("{domainId}/articles")
-	public ArticleSubResource subscriptions(@PathParam("domainId") int domainId) {
+	public ArticleSubResource articles(@PathParam("domainId") int domainId) {
 		return new ArticleSubResource(config, domainId);
 	}
 }
